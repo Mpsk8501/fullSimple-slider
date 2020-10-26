@@ -1,0 +1,18 @@
+@import './reset.scss';
+
+html {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #000;
+  font-size: 12px;
+  cursor: default;
+  height: 100%;
+}
+
+body {
+  background-color: #f00;
+}
+
+@import './slider.scss';
