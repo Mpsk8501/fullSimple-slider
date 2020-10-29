@@ -11,33 +11,23 @@ let counter = 0
 
 const sliderChanger = (direction) => {
   if (direction === 'next') {
-    if (counter === images.length - 1) {
-      images[images.length - 1].classList.toggle('active')
-      images[0].classList.toggle('active')
-      contentBxItems[contentBxItems.length - 1].classList.toggle('active')
-      contentBxItems[0].classList.toggle('active')
+    images[counter].classList.toggle('active')
+    contentBxItems[counter].classList.toggle('active')
+    counter++
+    if (counter >= images.length) {
       counter = 0
-    } else {
-      images[counter].classList.toggle('active')
-      images[counter + 1].classList.toggle('active')
-      contentBxItems[counter].classList.toggle('active')
-      contentBxItems[counter + 1].classList.toggle('active')
-      counter++
     }
+    images[counter].classList.toggle('active')
+    contentBxItems[counter].classList.toggle('active')
   } else if (direction === 'prev') {
-    if (counter === 0) {
-      images[0].classList.toggle('active')
-      images[images.length - 1].classList.toggle('active')
-      contentBxItems[0].classList.toggle('active')
-      contentBxItems[contentBxItems.length - 1].classList.toggle('active')
-      counter = contentBxItems.length - 1
-    } else {
-      images[counter].classList.toggle('active')
-      images[counter - 1].classList.toggle('active')
-      contentBxItems[counter].classList.toggle('active')
-      contentBxItems[counter - 1].classList.toggle('active')
-      counter--
+    images[counter].classList.toggle('active')
+    contentBxItems[counter].classList.toggle('active')
+    counter--
+    if (counter < 0) {
+      counter = images.length - 1
     }
+    images[counter].classList.toggle('active')
+    contentBxItems[counter].classList.toggle('active')
   }
 }
 
